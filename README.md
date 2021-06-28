@@ -1,6 +1,6 @@
 # WP Metabox v1.0
 
-> Simple WordPress Class for metabox and fork from [wp-metabox-constructor-class](https://github.com/MatthewKosloski/wp-metabox-constructor-class) 
+> Simple WordPress Class for metabox forks from [wp-metabox-constructor-class](https://github.com/MatthewKosloski/wp-metabox-constructor-class) 
 
 ## Requirements
 
@@ -52,23 +52,15 @@ To create a metabox, first instantiate an instance of `Metabox`.  The class take
 $metabox = new Metabox(array(
 	'id' => 'metabox_id',
 	'title' => 'My awesome metabox',
-	'screen' => 'post',
-	'context' => 'advanced', // Options normal, side, advannced.
+	'screen' => 'post', // post type
+	'context' => 'advanced', // Options normal, side, advanced.
 	'priority' => 'default'
 ));
 ```
 
 ## Available Fields
 
-After instantiating the above metabox, add a few fields to it.  Below is a list of the available fields.  Click on one to see how to implement it.
-
-- [Text](https://github.com/MatthewKosloski/wp-metabox-constructor-class#text)
-- [Textarea](https://github.com/MatthewKosloski/wp-metabox-constructor-class#textarea)
-- [Checkbox](https://github.com/MatthewKosloski/wp-metabox-constructor-class#checkbox)
-- [Radio](https://github.com/MatthewKosloski/wp-metabox-constructor-class#radio)
-- [Image Upload](https://github.com/MatthewKosloski/wp-metabox-constructor-class#image-upload)
-- [WYSIWYG Editor](https://github.com/MatthewKosloski/wp-metabox-constructor-class#wysiwyg-editor)
-- [Repeater](https://github.com/MatthewKosloski/wp-metabox-constructor-class#repeater)
+After instantiating the above metabox, add a few fields to it.  Below is a list of the available fields. 
 
 ### Text
 
