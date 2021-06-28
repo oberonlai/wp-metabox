@@ -63,10 +63,11 @@ class Metabox {
 			( is_array( $this->_meta_box['screen'] ) && in_array( $typenow, $this->_meta_box['screen'] ) ) ||
 			( is_string( $this->_meta_box['screen'] ) && $typenow == $this->_meta_box['screen'] )
 		) {
-			wp_enqueue_style( sprintf( '%s-styles', self::BLOCK_NAMESPACE ), $this->_path . '/style.css', array() );
-			wp_enqueue_script( sprintf( '%s-scripts', self::BLOCK_NAMESPACE ), $this->_path . '/script.js', array( 'jquery' ) );
+			wp_enqueue_style( 'wp-metabox-style', plugin_dir_url( __FILE__ ) . 'assets/style.css', array(), '1.0.0', null );
+			wp_enqueue_script( 'wp-metabox-script', plugin_dir_url( __FILE__ ) . 'assets/script.js', array( 'jquery' ), array(), '1.0.0', true );
 		}
 	}
+
 
 	public function add() {
 		add_meta_box(

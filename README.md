@@ -50,10 +50,10 @@ To create a metabox, first instantiate an instance of `Metabox`.  The class take
 
 ```php
 $metabox = new Metabox(array(
-	'id' => 'metabox_id', // required
-	'title' => 'My awesome metabox', // required
-	'screen' => 'post', // required
-	'context' => 'advanced',
+	'id' => 'metabox_id',
+	'title' => 'My awesome metabox',
+	'screen' => 'post',
+	'context' => 'advanced', // Options normal, side, advannced.
 	'priority' => 'default'
 ));
 ```
@@ -76,8 +76,8 @@ A simple text input.  Nothing special.
 
 ```php
 $metabox->addText(array(
-	'id' => 'metabox_text_field', // required
-	'label' => 'Text', // required
+	'id' => 'metabox_text_field',
+	'label' => 'Text',
 	'desc' => 'An example description paragraph that appears below the label.'
 ));
 ```
@@ -88,8 +88,8 @@ Textareas are used to store a body of text.  For a richer experience with HTML, 
 
 ```php
 $metabox->addTextArea(array(
-	'id' => 'metabox_textarea_field', // required
-	'label' => 'Textarea', // required
+	'id' => 'metabox_textarea_field',
+	'label' => 'Textarea',
 	'desc' => 'An example description paragraph that appears below the label.'
 ));
 ```
@@ -100,8 +100,8 @@ Checkboxes are a great way to facilitate conditional logic.
 
 ```php
 $metabox->addCheckbox(array(
-	'id' => 'metabox_checkbox_field', // required
-	'label' => 'Checkbox', // required
+	'id' => 'metabox_checkbox_field',
+	'label' => 'Checkbox',
 	'desc' => 'An example description paragraph that appears below the label.'
 ));
 ```
@@ -113,11 +113,11 @@ Radio fields are a great way to choose from a selection of options.
 ```php
 $metabox->addRadio(
 	array(
-		'id' => 'metabox_radio_field', // required
-		'label' => 'Radio', // required
+		'id' => 'metabox_radio_field',
+		'label' => 'Radio',
 		'desc' => 'An example description paragraph that appears below the label.',
 	),
-	array( // required
+	array(
 		'key1' => 'Value One',
 		'key2' => 'Value Two'
 	)
@@ -130,8 +130,8 @@ Use this to permit users to upload an image within the metabox.  Pro tip: use th
 
 ```php
 $metabox->addImage(array(
-	'id' => 'metabox_image_field', // required
-	'label' => 'Image Upload', // required
+	'id' => 'metabox_image_field',
+	'label' => 'Image Upload',
 	'desc' => 'An example description paragraph that appears below the label.'
 ));
 ```
@@ -142,8 +142,8 @@ You can use a WYSIWYG editor to facilitate the management of HTML content.
 
 ```php
 $metabox->addWysiwyg(array(
-	'id' => 'metabox_wysiwyg_field', // required
-	'label' => 'WYSIWYG', // required
+	'id' => 'metabox_wysiwyg_field',
+	'label' => 'WYSIWYG',
 	'desc' => 'An example description paragraph that appears below the label.'
 ));
 ```
@@ -168,12 +168,12 @@ $metabox_repeater_block_fields[] = $metabox->addTextArea(array(
 $metabox_repeater_block_fields[] = $metabox->addImage(array(
 	'id' => 'metabox_repeater_image_field',
 	'label' => 'Upload Photo'
-));
+), true);
 
 $metabox->addRepeaterBlock(array(
-	'id' => 'metabox_repeater_block', // required
-	'label' => 'Photo Gallery', // required
-	'fields' => $metabox_repeater_block_fields, // required
+	'id' => 'metabox_repeater_block',
+	'label' => 'Photo Gallery',
+	'fields' => $metabox_repeater_block_fields,
 	'desc' => 'Photos in a photo gallery.',
 	'single_label' => 'Photo'
 ));
