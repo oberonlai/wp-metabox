@@ -133,9 +133,9 @@ $metabox->addImage(array(
 You can use a WYSIWYG editor to facilitate the management of HTML content.
 
 ```php
-$metabox->addWysiwyg(array(
-	'id' => 'metabox_wysiwyg_field',
-	'label' => 'WYSIWYG',
+$metabox->addEditor(array(
+	'id' => 'metabox_editor_field',
+	'label' => 'Editor',
 	'desc' => 'An example description paragraph that appears below the label.'
 ));
 ```

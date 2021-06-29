@@ -306,8 +306,8 @@ class Metabox {
 		}
 	}
 
-	public function addWysiwyg( $args, $repeater = false ) {
-		$field = array_merge( array( 'type' => 'wysiwyg' ), $args );
+	public function addEditor( $args, $repeater = false ) {
+		$field = array_merge( array( 'type' => 'Editor' ), $args );
 		if ( ! $repeater ) {
 			$this->_fields[] = $field;
 		} else {
@@ -387,7 +387,7 @@ class Metabox {
 		$this->after_field();
 	}
 
-	public function show_field_wysiwyg( $field, $meta ) {
+	public function show_field_Editor( $field, $meta ) {
 		$this->before_field( $field );
 		wp_editor( $meta, $field['id'] );
 		$this->after_field();
