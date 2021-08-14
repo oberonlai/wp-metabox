@@ -325,6 +325,16 @@ class Metabox {
 		}
 	}
 
+	public function addSelect( $args, $options, $repeater = false ) {
+		$options = array( 'options' => $options );
+		$field   = array_merge( array( 'type' => 'select' ), $args, $options );
+		if ( ! $repeater ) {
+			$this->_fields[] = $field;
+		} else {
+			return $field;
+		}
+	}
+
 	public function addRepeaterBlock( $args ) {
 		$field           = array_merge(
 			array(
@@ -409,6 +419,26 @@ class Metabox {
 				checked( $key == $meta, true, false )
 			);
 		}
+		$this->after_field( $field ); // pass in $field to render desc below input
+	}
+
+	public function show_field_select( $field, $meta ) {
+		$this->before_field( $field );
+		echo '<select name="' . esc_attr( $field['id'] ) . '">';
+		foreach ( $field['options'] as $key => $value ) {
+			echo sprintf(
+				'
+                    <option class="%3$s" id="%1$s" name="%4$s" value="%5$s" %6$s>%2$s</option>
+                ',
+				esc_attr( $field['id'] . '_' . $key ),
+				esc_html( $value ),
+				esc_attr( $this->get_block_element_class_with_namespace( $field['type'] ) ),
+				esc_attr( $field['id'] ),
+				esc_attr( $key ),
+				selected( $key == $meta, true, false )
+			);
+		}
+		echo '</select>';
 		$this->after_field( $field ); // pass in $field to render desc below input
 	}
 

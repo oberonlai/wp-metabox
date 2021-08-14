@@ -116,6 +116,24 @@ $metabox->addRadio(
 );
 ```
 
+### Select
+
+Select fields are a great way to choose from a selection of options.
+
+```php
+$metabox->addSelect(
+	array(
+		'id' => 'metabox_select_field',
+		'label' => 'Select',
+		'desc' => 'An example description paragraph that appears below the label.',
+	),
+	array(
+		'key1' => 'Value One',
+		'key2' => 'Value Two'
+	)
+);
+```
+
 ### Image Upload
 
 Use this to permit users to upload an image within the metabox.  Pro tip: use this with the [repeater](https://github.com/MatthewKosloski/wp-metabox-constructor-class#repeater) to dynamically manage the photos within a gallery or slideshow.
