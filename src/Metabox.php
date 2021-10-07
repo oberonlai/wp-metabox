@@ -270,6 +270,15 @@ class Metabox {
 		);
 	}
 
+	public function addHtml( $args, $repeater = false ) {
+		$field = array_merge( array( 'type' => 'html' ), $args );
+		if ( false == $repeater ) {
+			$this->_fields[] = $field;
+		} else {
+			return $field;
+		}
+	}
+
 	public function addText( $args, $repeater = false ) {
 		$field = array_merge( array( 'type' => 'text' ), $args );
 		if ( false == $repeater ) {
@@ -345,6 +354,12 @@ class Metabox {
 			$args
 		);
 		$this->_fields[] = $field;
+	}
+
+	public function show_field_html( $field, $meta ) {
+		$this->before_field( $field );
+		echo $field['html'];
+		$this->after_field();
 	}
 
 	public function show_field_text( $field, $meta ) {

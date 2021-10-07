@@ -44,6 +44,8 @@ require __DIR__ . '/vendor/autoload.php';
 // Import PostTypes.
 use ODS\Metabox;
 
+```
+
 ## Usage
 
 To create a metabox, first instantiate an instance of `Metabox`.  The class takes one argument, which is an associative array.  The keys to the array are similar to the arguments provided to the [add_meta_box](https://developer.wordpress.org/reference/functions/add_meta_box/) WordPress function; however, you don't provide `callback` or `callback_args`.
@@ -131,6 +133,20 @@ $metabox->addSelect(
 		'key1' => 'Value One',
 		'key2' => 'Value Two'
 	)
+);
+```
+
+### Html
+
+Add HTML markup to display information.
+
+```php
+$metabox->addHtml(
+	array(
+		'id' => 'metabox_html_field',
+		'label' => 'html',
+		'html' => '<h1>Hello World</h1>',
+	),
 );
 ```
 
